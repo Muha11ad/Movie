@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <title>Movies App</title>
+    <style>
+        .swipe{
+            transform: translateX(130%);
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- -----HEADER Start----- -->
+    <header class="bg-gradient-to-tl from-emerald-700 to-lime-300">
+        <div class="container px-5 mx-auto">
+            <nav class="flex justify-around items-center h-[70px]">
+                <a href="#" class="nav__logo text-white text-2xl font-bold">The movies Data base</a>
+                <input type="search" placeholder="Enter film name" id="searchpanel"
+                 class="w-[300px] text-green-600 h-[40px] ml-[200px] block rounded-xl px-5 focus:ring-2 focus:ring-green-500 focus:outline-none placeholder:text-green-600">
+                 <button id="bookMark" 
+                 class="bg-white px-4 py-3 rounded-lg flex">
+                 Bookmark 
+                 <span id="count"
+                  class="bg-red-500 ml-3 rounded-full w-[24px] h-[24px]">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <!-- -----HEADER End------->
+    
+    <!-- -----Main sTart------->
+    <main>
+        <section>
+            <div class="container mx-auto flex fixed">
+                <aside class="h-screen w-[20%] bg-gradient-to-l from-emerald-300 to-white p-5 flex flex-col items-center">
+                   
+                    <label for="isname" class="flex flex-col gap-4 items-center mb-5">
+                        <p class="font-bold">Enter film name</p>
+                        <input type="search" placeholder="Enter film name" id="isname"
+                        class="w-[230px] text-green-600 h-[40px] block rounded-xl px-5 focus:ring-2 focus:ring-green-500 focus:outline-none placeholder:text-green-600">
+                    </label>
+
+                    <label for="rating" class="flex flex-col gap-4 items-center mb-5">
+                        <p class="font-bold">Enter film rating</p>
+                        <input type="number" placeholder="Enter film rating" id="rating" max="10" min="1"
+                        class="w-[230px] text-green-600 h-[40px] block rounded-xl px-5 focus:ring-2 focus:ring-green-500 focus:outline-none placeholder:text-green-600">
+                    </label>
+
+                    <select id="category"
+                    class="w-[230px] m-4 text-green-600 h-[40px] block rounded-xl px-5 focus:ring-2 focus:ring-green-500 focus:outline-none placeholder:text-green-600">
+                    <option disabled selected>Select film category</option>
+                    </select>
+                    <button id="search-btn"
+                    class="bg-sky-500 text-white py-2 px-4 rounded-xl text-[20px] focus:outline-none font-semibold hover:scale-95 active:scale-75 ">
+                    SEARCH</button>
+                </aside>
+
+                <div class="main-content overflow-scroll bg-gradient-to-r from-emerald-500 to-lime-white h-screen w-[70%] flex flex-wrap gap-8 px-10 py-7">
+                </div>
+
+                <div id="bookmark-list"
+                 class="overflow-scroll flex flex-wrap gap-2 p-4 shadow absolute right-[-170px] w-[320px] h-screen bg-gradient-to-r from-emerald-100 to-lime-white"></div>
+            </div>
+        </section>
+    </main>
+    <!-- -----Main eNd------->
+
+<!-- JS  -->
+<script src="/src/sctript/db.js"></script>
+<script src="/src/sctript/index.js"></script>
+</body>
+</html>
